@@ -3,9 +3,15 @@
     $user_res = get_user();
     $user_row = mysqli_fetch_assoc($user_res);
     $user_name = $user_row['name'];
+
+    $active_path = substr($_SERVER['SCRIPT_NAME'], strrpos($_SERVER['SCRIPT_NAME'], "/") +  1);
 ?>
-<div class="w-60 h-full shadow-md bg-white absolute" id="sidenavSecExample">
-  <div class="pt-4 pb-2 px-6">
+ <!-- <span class="absolute text-white text-4xl top-5 left-4 cursor-pointer" onclick="Openbar()">
+   <i class="bi bi-filter-left px-2 bg-gray-900 rounded-md"></i>
+</span>
+<div class="w-60 sidebar shadow-md bg-white fixed top-0 bottom-0 lg:left-0 left-[-300px] duration-1000 p-2 w-[250px] overflow-y-auto shadow h-screen" id="sidenavSecExample">
+   <i class="bi bi-x ml-20 cursor-pointer lg:hidden" onclick="Openbar()"></i>
+   <div class="pt-4 pb-2 px-6">
     <a href="#!">
       <div class="flex items-center">
         <div class="shrink-0">
@@ -65,16 +71,7 @@
          </ul>
       </li>
   </ul>
-  <!-- <hr class="my-2"> -->
   <ul class="relative px-1">
-      <!-- <li class="relative">
-         <a href="./level_income.php" class="flex items-center text-sm py-4 px-6 h-12 overflow-hidden text-gray-700 text-ellipsis whitespace-nowrap rounded hover:text-blue-600 hover:bg-blue-50 transition duration-300 ease-in-out" data-mdb-ripple="true" data-mdb-ripple-color="primary">
-         <svg aria-hidden="true" focusable="false" data-prefix="fas" class="w-3 h-3 mr-3" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-            <path fill="currentColor" d="M488.6 250.2L392 214V105.5c0-15-9.3-28.4-23.4-33.7l-100-37.5c-8.1-3.1-17.1-3.1-25.3 0l-100 37.5c-14.1 5.3-23.4 18.7-23.4 33.7V214l-96.6 36.2C9.3 255.5 0 268.9 0 283.9V394c0 13.6 7.7 26.1 19.9 32.2l100 50c10.1 5.1 22.1 5.1 32.2 0l103.9-52 103.9 52c10.1 5.1 22.1 5.1 32.2 0l100-50c12.2-6.1 19.9-18.6 19.9-32.2V283.9c0-15-9.3-28.4-23.4-33.7zM358 214.8l-85 31.9v-68.2l85-37v73.3zM154 104.1l102-38.2 102 38.2v.6l-102 41.4-102-41.4v-.6zm84 291.1l-85 42.5v-79.1l85-38.8v75.4zm0-112l-102 41.4-102-41.4v-.6l102-38.2 102 38.2v.6zm240 112l-85 42.5v-79.1l85-38.8v75.4zm0-112l-102 41.4-102-41.4v-.6l102-38.2 102 38.2v.6z"></path>
-         </svg>
-         <span>Level Income</span>
-         </a>
-      </li> -->
       <li class="relative">
          <a href="./kyc.php" class="flex items-center text-sm py-4 px-6 h-12 overflow-hidden text-gray-700 text-ellipsis whitespace-nowrap rounded hover:text-blue-600 hover:bg-blue-50 transition duration-300 ease-in-out" data-mdb-ripple="true" data-mdb-ripple-color="primary">
          <svg aria-hidden="true" focusable="false" data-prefix="fas" class="w-3 h-3 mr-3" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
@@ -100,4 +97,103 @@
          </a>
       </li>
   </ul>
+</div> -->
+
+<span class="absolute right-2 lg:hidden text-gray-800 shadow-xl text-4xl top-5 cursor-pointer" onclick="Openbar()">
+   <i class="bi bi-filter-left px-2 bg-white rounded-md"></i>
+</span>
+<div class="sidebar z-50 fixed top-0 bottom-0 lg:left-0 left-[-300px] duration-1000 p-2 w-[250px] overflow-y-auto text-center bg-white shadow h-screen">
+   <div class="text-gray-700 text-xl">
+      <div class="p-2.5 mt-1 flex items-center rounded-md">
+         <i class="bi bi-app-indicator px-2 py-1 rounded-md"></i>
+         <h1 class="text-[15px]  ml-3 text-xl text-gray-700 font-bold">MLM</h1>
+         <!-- <i class="bi bi-x bg-slate-200 ml-16 text-4xl font-bold cursor-pointer lg:hidden" onclick="Openbar()"></i> -->
+      </div>
+      <hr class="my-2 text-gray-600">
+
+         <div>
+
+            <a href="./index.php">
+               <div class="p-2.5 mt-2 flex items-center px-4 cursor-pointer overflow-hidden text-ellipsis whitespace-nowrap rounded-lg hover:text-blue-600 hover:bg-blue-50 transition duration-300 ease-in-out <?= $active_path == "index.php" ? 'text-blue-600 bg-blue-50' : '' ?>">
+                  <i class="bi bi-house-door-fill"></i>
+                  <span class="text-[15px] ml-4 text-gray-700">Dashboard</span>
+               </div>
+         </a>
+         <!-- <a href="./index.php">
+               <div class="p-2.5 mt-2 flex items-center px-4 cursor-pointer overflow-hidden text-ellipsis whitespace-nowrap rounded hover:text-blue-600 hover:bg-blue-50 transition duration-300 ease-in-out">
+                  <i class="bi bi-house-door-fill"></i>
+                  <span class="text-[15px] ml-4 text-gray-700">Home</span>
+               </div>
+         </a> -->
+         <!-- <hr class="my-4 text-gray-600"> -->
+
+         <!-- e-pin dropdown -->
+         <div class="relative" id="sidenavSecEx2">
+               <a class="flex items-center text-sm py-4 px-4 h-12 overflow-hidden text-gray-700 text-ellipsis whitespace-nowrap rounded hover:text-blue-600 hover:bg-blue-50 transition duration-300 ease-in-out cursor-pointer" data-bs-toggle="collapse" data-bs-target="#collapseSidenavSecEx2" aria-expanded="false" aria-controls="collapseSidenavSecEx2">
+                  <!-- <i class="bi bi-house-door-fill text-xl pr-4"></i> -->
+                  <i class="bi bi-key-fill text-xl pr-4"></i>
+                  <span>E-Pin</span>
+                  <svg aria-hidden="true" focusable="false" data-prefix="fas" class="w-3 h-3 ml-auto" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                     <path fill="currentColor" d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"></path>
+                  </svg>
+               </a>
+               <div class="relative accordion-collapse collapse" id="collapseSidenavSecEx2" aria-labelledby="sidenavSecEx2" data-bs-parent="#sidenavSecExample">
+                  <span class="relative">
+                     <a href="./e-pin-generate.php" class="flex items-center text-xs py-4 pl-12 pr-6 h-6 overflow-hidden text-gray-700 text-ellipsis whitespace-nowrap rounded hover:text-blue-600 hover:bg-blue-50 transition duration-300 ease-in-out <?= $active_path == "e-pin-generate.php" ? 'text-blue-600 bg-blue-50' : '' ?>">Generate E-Pin</a>
+                  </span>
+                  <span class="relative">
+                     <a href="./epin-history.php" class="flex items-center text-xs py-4 pl-12 pr-6 h-6 overflow-hidden text-gray-700 text-ellipsis whitespace-nowrap rounded hover:text-blue-600 hover:bg-blue-50 transition duration-300 ease-in-out <?= $active_path == "epin-history.php" ? 'text-blue-600 bg-blue-50' : '' ?>">E-Pin history</a>
+                  </span>
+               </div>
+            </div>
+
+            <!-- withdraw dropdown -->
+            <div class="relative" id="sidenavSecEx3">
+               <a class="flex items-center p-2.5 text-sm py-4 px-4 h-12 overflow-hidden text-gray-700 text-ellipsis whitespace-nowrap rounded hover:text-blue-600 hover:bg-blue-50 transition duration-300 ease-in-out cursor-pointer" data-bs-toggle="collapse" data-bs-target="#collapseSidenavSecEx3" aria-expanded="false" aria-controls="collapseSidenavSecEx3">
+                  <!-- <i class="bi bi-house-door-fill text-xl pr-4"></i> -->
+                  <i class="bi bi-piggy-bank-fill text-xl pr-4"></i>
+                  <span>Withdrawal</span>
+                  <svg aria-hidden="true" focusable="false" data-prefix="fas" class="w-3 h-3 ml-auto" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                     <path fill="currentColor" d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"></path>
+                  </svg>
+               </a>
+               <div class="relative accordion-collapse collapse" id="collapseSidenavSecEx3" aria-labelledby="sidenavSecEx3" data-bs-parent="#sidenavSecExample">
+                  <span class="relative">
+                     <a href="./withdraw_amount.php" class="flex items-center text-xs py-4 pl-12 pr-6 h-6 overflow-hidden text-gray-700 text-ellipsis whitespace-nowrap rounded hover:text-blue-600 hover:bg-blue-50 transition duration-300 ease-in-out <?= $active_path == "withdraw_amount.php" ? 'text-blue-600 bg-blue-50' : '' ?>">Withdraw Amount</a>
+                  </span>
+                  <span class="relative">
+                     <a href="./withdrawal_history.php" class="flex items-center text-xs py-4 pl-12 pr-6 h-6 overflow-hidden text-gray-700 text-ellipsis whitespace-nowrap rounded hover:text-blue-600 hover:bg-blue-50 transition duration-300 ease-in-out <?= $active_path == "withdrawal_history.php" ? 'text-blue-600 bg-blue-50' : '' ?>">Withdraw History</a>
+                  </span>
+               </div>
+            </div>
+
+            <hr class="my-4 text-gray-600">
+
+            <a href="./kyc.php">
+               <div class="p-2.5 mt-2 flex items-center px-4 cursor-pointer overflow-hidden text-ellipsis whitespace-nowrap rounded hover:text-blue-600 hover:bg-blue-50 transition duration-300 ease-in-out <?= $active_path == "kyc.php" ? 'text-blue-600 bg-blue-50' : '' ?>">
+                  <!-- <i class="bi bi-house-door-fill"></i> -->
+                  <i class="bi bi-tools"></i>
+                  <span class="text-[15px] ml-4 text-gray-700">KYC</span>
+               </div>
+            </a>
+
+            <a href="./referal_link.php">
+               <div class="p-2.5 mt-2 flex items-center px-4 cursor-pointer overflow-hidden text-ellipsis whitespace-nowrap rounded hover:text-blue-600 hover:bg-blue-50 transition duration-300 ease-in-out <?= $active_path == "referal_link.php" ? 'text-blue-600 bg-blue-50' : '' ?>">
+                  <!-- <i class="bi bi-house-door-fill"></i> -->
+                  <i class="bi bi-share-fill"></i>
+                  <span class="text-[15px] ml-4 text-gray-700">Referal Link</span>
+               </div>
+            </a>
+
+            <hr class="my-4 text-gray-600">
+
+            <a href="../logout.php">
+               <div class="p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-gray-300 bg-gray-200">
+                  <i class="bi bi-box-arrow-in-right font-bold"></i>
+                  <span class="text-[15px] ml-4 text-gray-700">Logout</span>
+               </div>
+            </a>
+
+         </div>
+   </div>
 </div>

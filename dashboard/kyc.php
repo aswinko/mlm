@@ -44,14 +44,15 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/index.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
     
 </head>
 <body class="bg-slate-100">
     <?php include('./sidebar.php'); ?>
     
-    <div class="container mx-auto lg:px-12 lg:pl-64 pt-6">
+    <div class="container mx-auto lg:px-12 lg:pl-64 pt-6 px-2">
         <h2 class="text-2xl font-semibold text-gray-600">Update Kyc</h2>
-        <div class="px-48 pt-6">
+        <div class="lg:px-48 pt-6">
             <div class="bg-white p-10 rounded-lg">
                 <form method="post" action=""> 
                     <!-- <h2 class="text-2xl font-semibold text-gray-600">Bank Details</h2> -->
@@ -124,5 +125,10 @@
 
     <!-- sidenav link -->
     <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></script>
+    <script>
+        function Openbar() {
+            document.querySelector('.sidebar').classList.toggle('left-[-300px]')
+        }
+    </script>
 </body>
 </html>

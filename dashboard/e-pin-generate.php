@@ -42,6 +42,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/index.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
     <!-- jquery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
     
@@ -49,8 +50,8 @@
 <body class="bg-slate-100">
     <?php include('./sidebar.php'); ?>
 
-    <section class="container mx-auto pl-64">
-        <h2 class="pt-10 text-2xl font-bold">E-Pin</h2>
+    <section class="container mx-auto lg:pl-64 px-4">
+        <h2 class="pt-10 lg:px-10 text-2xl font-bold">E-Pin</h2>
         <div class=" flex flex-col items-center justify-center mt-12">
             <div class="flex flex-col bg-white shadow-md px-4 sm:px-6 md:px-8 lg:px-10 py-8 rounded-md w-full max-w-md">
                 <?php if($get_num_rows > 0): ?>
@@ -62,7 +63,7 @@
                             <div class="flex flex-col mb-6">
                                 <label for="epin_price" class="mb-1 text-xs sm:text-sm tracking-wide text-gray-600">E-Pin Price:</label>
                                 <div class="relative">
-                                    <select onchange="getValue()" id="epin_price" name="epin_price" class="bg-slate-100 border border-gray-400 text-gray-500 placeholder-gray-500  text-sm rounded-lg focus:ring-blue-500 focus-visible:border-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-slate-100 dark:border-gray-400 dark:placeholder-gray-400 dark:text-black dark:focus:ring-blue-500 dark:focus-visible:border-blue-500 dark:focus:border-blue-500">
+                                    <select onchange="getValue()" id="epin_price" name="epin_price" class="bg-slate-100 border border-gray-400 text-gray-500 placeholder-gray-500  text-sm rounded-lg focus:ring-blue-500 focus-visible:border-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-slate-100 dark:border-gray-400 dark:placeholder-gray-400 dark:text-black dark:focus:ring-blue-500 dark:focus-visible:border-blue-500 dark:focus:border-blue-500" required>
                                         <option selected>Choose Your price</option>
                                         <option value="10000">10,000</option>
                                         <option value="25000">25,000</option>
@@ -75,12 +76,12 @@
                             <div class="flex flex-col mb-6">
                                 <label for="total_amount" class="mb-1 text-xs sm:text-sm tracking-wide text-gray-600">Total amount:</label>
                                 <div class="relative">
-                                    <input disabled id="total_amount" type="text" name="total_amount" class="text-sm sm:text-base bg-slate-100 placeholder-gray-500 pl-4 pr-4 rounded-lg border border-gray-400 w-full py-2 focus:outline-none focus:border-blue-400" placeholder="Total amount" />
+                                    <input disabled id="total_amount" type="text" name="total_amount" class="text-sm sm:text-base bg-slate-100 placeholder-gray-500 pl-4 pr-4 rounded-lg border border-gray-400 w-full py-2 focus:outline-none focus:border-blue-400" placeholder="Total amount" required/>
                                 </div>
                             </div>
                             <div class="flex flex-col mb-6">  
                                 <label for="formFile" class="form-label inline-block mb-2 text-gray-700">Upload transcation img:</label>
-                                <input name="transcation_img" class="form-control block w-full px-3 py-2 text-base font-normal text-gray-700 bg-slate-100 bg-clip-padding border border-solid border-gray-300 rounded-lg transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" type="file" id="formFile">
+                                <input name="transcation_img" class="form-control block w-full px-3 py-2 text-base font-normal text-gray-700 bg-slate-100 bg-clip-padding border border-solid border-gray-300 rounded-lg transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" type="file" id="formFile" required>
                                 <p class="mt-1 text-sm text-gray-500 dark:text-gray-500" id="file_input_help">SVG, PNG, JPG or GIF (MAX. 800x400px).</p>
                             </div>
     
@@ -108,6 +109,11 @@
         function getValue(){
             var valSelect = $("#epin_price").val();
             $("#total_amount").val(valSelect);
+        }
+    </script>
+    <script>
+        function Openbar() {
+            document.querySelector('.sidebar').classList.toggle('left-[-300px]')
         }
     </script>
 </body>

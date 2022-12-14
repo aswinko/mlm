@@ -39,12 +39,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/index.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
     
 </head>
 <body class="bg-slate-100">
     <?php include('./sidebar.php'); ?>
     
-    <section class="container mx-auto pl-64 pt-10">
+    <section class="container mx-auto lg:pl-64 px-2 pt-10">
         <div class=" flex flex-col items-center justify-center mt-12">
             <div class="flex flex-col bg-white shadow-md px-4 sm:px-6 md:px-8 lg:px-10 py-8 rounded-md w-full max-w-md">
                 <div class="font-medium text-xl sm:text-2xl text-gray-800 text-center">Referal Link</div>
@@ -53,7 +54,7 @@
                         <div class="relative p-4">
                             <?php if($num > 0): ?>
                                 <?php if ($epin_status == "Approved"): ?>
-                                <p id="referal_link" class="mb-1 p-4 text-lg sm:text-lg bg-slate-100 tracking-wide text-gray-900 w-full">https://printsmonk.com/register.php?ref_id=<?php echo $ref_id; ?></p>
+                                <p id="referal_link" class="mb-1 p-4 text-sm break-all sm:text-lg bg-slate-100 tracking-wide text-gray-900 w-full">https://printsmonk.com/register.php?ref_id=<?php echo $ref_id; ?></p>
                                 <?php else: ?>
                                     <p class="text-rose-600">Purchase E-Pin to Unlock Referral Link.</p>
                                     <p class="">To Purchase <a href="./e-pin-generate.php" class="text-blue-600 underline">Click here</a></p>
@@ -110,6 +111,11 @@
             // Alert the copied text
             alert("Copied the text: " + ref_link);
         }                                                                                   
+    </script>
+    <script>
+        function Openbar() {
+            document.querySelector('.sidebar').classList.toggle('left-[-300px]')
+        }
     </script>
 </body>
 </html>

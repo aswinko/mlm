@@ -37,16 +37,17 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/index.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
     
 </head>
 <body class="bg-slate-100">
     <?php include('./sidebar.php'); ?>
 
 
-    <section class="container mx-auto pl-64">
+    <section class="container mx-auto lg:pl-72 px-6 mb-8">
         <h2 class="pt-10 text-2xl font-bold">Dashboard</h2>
-        <div class="card grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4 justify-evenly">
-            <div class="columns-1 xl:w-72 w-64 mt-5">
+        <div class="card grid xl:grid-cols-3 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-2 gap-4 justify-evenly">
+            <div class="columns-1 w-[100%] mt-5">
                 <div class="grid grid-cols-2 gap-1 block p-6 rounded-lg shadow-lg bg-white max-w-sm py-10">
                     <div class="left columns-1">
                         <i class="fa-solid fa-wallet text-gray-500 text-4xl"></i>
@@ -58,19 +59,21 @@
                     </div>
                 </div>
             </div>
-            <div class="columns-1 xl:w-72 w-64 mt-5">
+            <div class="columns-1 w-[100%] mt-5">
                 <div class="grid grid-cols-2 gap-1 block p-6 rounded-lg shadow-lg bg-white max-w-sm py-10">
                     <div class="left columns-1">
-                        <i class="fa-solid fa-wallet text-gray-500 text-4xl"></i>
+                        <!-- <i class="fa-solid fa-wallet text-gray-500 text-4xl"></i> -->
+                        <i class="fa-solid fa-money-check text-gray-500 text-4xl"></i>
                         <p class="text-gray-500 leading-tight font-medium text-m text-base">Level Income</p>
                     </div>
                     <div class="columns-1 right flex flex-row justify-end">
                         <i class="fa-solid fa-indian-rupee-sign text-gray-500 text-4xl"></i>
+                        
                         <p class="text-gray-500 text-3xl mb-4 ml-1"><?php echo $level_income; ?></p>
                     </div>
                 </div>
             </div>
-            <div class="columns-1 xl:w-72 w-64 mt-5">
+            <div class="columns-1 w-[100%] mt-5">
                 <div class="grid grid-cols-2 gap-1 block p-6 rounded-lg shadow-lg bg-white max-w-sm py-10">
                     <div class="left columns-1">
                         <!-- <i class="fa-solid fa-wallet text-gray-500 text-4xl"></i> -->
@@ -83,7 +86,7 @@
                     </div>
                 </div>
             </div>
-            <div class="columns-1 xl:w-72 w-64 mt-5">
+            <div class="columns-1 w-[100%] mt-5">
                 <div class="grid grid-cols-2 gap-1 block p-6 rounded-lg shadow-lg bg-white max-w-sm py-10">
                     <div class="left columns-1">
                         <!-- <i class="fa-solid fa-wallet text-gray-500 text-4xl"></i> -->
@@ -111,7 +114,7 @@
                 </div>
             </div> -->
 
-            <div class="columns-1 xl:w-72 w-64 mt-5">
+            <div class="columns-1 w-[100%] mt-5">
                 <div class="grid grid-cols-2 gap-1 block p-6 rounded-lg shadow-lg bg-white max-w-sm py-10">
                     <div class="left columns-1">
                         <i class="fas fa-university text-gray-500 text-4xl"></i>
@@ -124,7 +127,7 @@
                 </div>
             </div>
 
-            <div class="columns-1 xl:w-72 w-64 mt-5">
+            <div class="columns-1 w-[100%] mt-5">
                 <div class="grid grid-cols-2 gap-1 block p-6 rounded-lg shadow-lg bg-white max-w-sm py-10">
                     <div class="left columns-1">
                         <i class="fas fa-piggy-bank text-gray-500 text-4xl"></i>
@@ -137,7 +140,7 @@
                 </div>
             </div>
 
-            <div class="columns-1 xl:w-72 w-64 mt-5">
+            <div class="columns-1 w-[100%] mt-5">
                 <div class="grid grid-cols-2 gap-1 block p-6 rounded-lg shadow-lg bg-white max-w-sm py-10">
                     <div class="left columns-1">
                         <i class="far fa-clock text-gray-500 text-4xl"></i>
@@ -152,12 +155,22 @@
 
         
     </section>
-    
 
     
     
     <!-- <script src="https://unpkg.com/@themesberg/flowbite@latest/dist/flowbite.bundle.js"></script> -->
     <!-- sidenav link -->
     <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></script>
+    <script>
+        function dropDown() {
+            document.querySelector('#submenu').classList.toggle('hidden')
+            document.querySelector('#arrow').classList.toggle('rotate-0')
+            }
+            dropDown()
+
+        function Openbar() {
+            document.querySelector('.sidebar').classList.toggle('left-[-300px]')
+        }
+    </script>
 </body>
 </html>

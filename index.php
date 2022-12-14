@@ -76,7 +76,6 @@
     </nav>
 
     <div class="container mx-auto">
-
         <!-- Section: Hero Block -->
         <section class="mb-4 grid content-center h-screen bg-white" id="hero">
             <div class="text-center text-gray-800 py-24 px-6">

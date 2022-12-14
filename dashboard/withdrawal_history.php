@@ -35,17 +35,18 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/index.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
     
 </head>
 <body class="bg-slate-100">
     <?php include('./sidebar.php'); ?>
     
     
-    <div class="container mx-auto lg:px-16 lg:pl-64">
+    <div class="container mx-auto lg:pr-16 lg:pl-64 px-2">
         <div class="flex flex-col">
-            <div class="overflow-x-auto sm:-mx-6 lg:-mx-2">
+            <h2 class="pt-12 text-xl lg:px-24 sm:px-6 text-gray-600 font-semibold">Withrawal History</h2>
+            <div class="overflow-x-auto sm:mx-6 lg:mx-2">
                 <div class="py-2 inline-block min-w-full sm:px-6 lg:px-24">
-                    <h2 class="pt-12 text-xl text-gray-600 font-semibold">Withrawal History</h2>
                     <div class="overflow-x-auto">
                         <table class="min-w-full mt-6 bg-white">
                             <thead class="border-b">
@@ -97,5 +98,10 @@
 
     <!-- sidenav link -->
     <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></script>
+    <script>
+        function Openbar() {
+            document.querySelector('.sidebar').classList.toggle('left-[-300px]')
+        }
+    </script>
 </body>
 </html>
