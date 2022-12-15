@@ -11,18 +11,6 @@
     $sql = "SELECT * FROM epin ORDER BY id DESC";
     $res = mysqli_query($conn, $sql);
     $record = mysqli_fetch_all($res, MYSQLI_ASSOC);
-    
-    // $record1 = mysqli_fetch_assoc($res);
-    // $current_date = $record1['e_pin']; 
-    // echo $current_date;
-    // $from_date = $current_date;
-    // // echo $from_date;
-
-    // $to_date = $from_date + 200;
-
-    // $difference = $to_date - $from_date;
-
-    // echo 'Remaining days: ' .$difference.' days';
 
 ?>
 
@@ -33,19 +21,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>admin</title>
-    <!-- tailwind css -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- <link rel="stylesheet" href="https://unpkg.com/flowbite@1.5.1/dist/flowbite.min.css" /> -->
-    <!-- font awesome link -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/index.min.css" />
     
+    <?php include('../includes/header_links.php'); ?>
 </head>
 <body class="bg-slate-100">
     <?php include('./sidebar.php'); ?>
-    <div class="container mx-auto lg:px-32 lg:pl-64 pt-12">
+    <div class="container mx-auto lg:px-32 lg:pl-72 px-2 pt-12">
         <div class="flex flex-col">
+            <h2 class="text-xl font-semibold text-gray-700 mb-6">E-PIN Approval</h2>
             <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
                 <div class="py-2 inline-block min-w-full sm:px-6 lg:px-8">
                     <div class="overflow-x-auto">
@@ -99,8 +82,12 @@
                                             <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
                                             <?php echo htmlspecialchars($records['pack_amount']); ?>
                                             </td>
-                                            <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                                                <img class="w-10" src="./transcation_images/<?php echo htmlspecialchars($records['transcation_img']); ?>" alt="">
+                                            <td class="text-sm text-gray-900 font-light px-6 whitespace-nowrap">
+                                                <div class="">
+                                                    <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModalCenter">
+                                                        <img class="w-16" src="./transcation_images/<?php echo htmlspecialchars($records['transcation_img']); ?>" alt="">
+                                                    </button>
+                                                </div>
                                             </td>
                                             <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
                                             <?php echo htmlspecialchars($records['status']); ?>
@@ -120,7 +107,67 @@
                                                 <?php $records['e_pin'] != null ? print $records['e_pin'] : print 'nil'; ?>
                                             </td>
                                         </tr>
+                                        <div class="modal fade fixed top-0 left-0 hidden w-full h-full outline-none overflow-x-hidden overflow-y-auto" id="exampleModalCenter" tabindex="-1" aria-labelledby="exampleModalCenterTitle" aria-modal="true" role="dialog">
+                                            <div class="modal-dialog modal-dialog-centered relative w-auto pointer-events-none">
+                                                <div class="modal-content border-none shadow-lg relative flex flex-col w-full pointer-events-auto bg-white bg-clip-padding rounded-md outline-none text-current">
+                                                    <div class="modal-header flex flex-shrink-0 items-center justify-between p-4 border-b border-gray-200 rounded-t-md">
+                                                        <button type="button" class="btn-close box-content w-6 h-6 p-1 text-gray-800 border-none rounded-none opacity-50 focus:shadow-none focus:outline-none focus:opacity-100 hover:text-black hover:opacity-75 hover:no-underline"
+                                                        data-bs-dismiss="modal" aria-label="Close"><i class="fa-solid fa-xmark text-xl"></i>
+                                                        </button>
+                                                    </div>
+                                                    <div class="modal-body relative p-4">
+                                                        <img class="w-full" src="./transcation_images/<?php echo htmlspecialchars($records['transcation_img']); ?>" alt="">
+                                                    </div>
+                                                    <div class="modal-footer flex flex-shrink-0 flex-wrap items-center justify-end p-4 border-t border-gray-200 rounded-b-md">
+                                                        <!-- <button type="button"
+                                                        class="inline-block px-6 py-2.5 bg-purple-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-purple-700 hover:shadow-lg focus:bg-purple-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-purple-800 active:shadow-lg transition duration-150 ease-in-out"
+                                                        data-bs-dismiss="modal">
+                                                        Close
+                                                        </button> -->
+                                                        <a href="./transcation_images/<?php echo htmlspecialchars($records['transcation_img']); ?>" download="transaction-image">
+                                                            <button type="button"
+                                                            class="inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out ml-1">
+                                                            Download Image
+                                                            </button>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     <?php endforeach; ?>
+                                    
+
+                                    <!-- <div class="modal fade fixed top-0 left-0 hidden w-full h-full outline-none overflow-x-hidden overflow-y-auto" id="exampleModalCenteredScrollable" tabindex="-1" aria-labelledby="exampleModalCenteredScrollable" aria-modal="true" role="dialog">
+                                        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable relative w-auto pointer-events-none">
+                                            <div class="modal-content border-none shadow-lg relative flex flex-col w-full pointer-events-auto bg-white bg-clip-padding rounded-md outline-none text-current">
+                                            <div class="modal-header flex flex-shrink-0 items-center justify-between p-4 border-b border-gray-200 rounded-t-md">
+                                                <h5 class="text-xl font-medium leading-normal text-gray-800" id="exampleModalCenteredScrollableLabel">
+                                                Modal title
+                                                </h5>
+                                                <button type="button"
+                                                class="btn-close box-content w-4 h-4 p-1 text-black border-none rounded-none opacity-50 focus:shadow-none focus:outline-none focus:opacity-100 hover:text-black hover:opacity-75 hover:no-underline"
+                                                data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body relative p-4">
+                                                <p>This is some placeholder content to show a vertically centered modal. We've added some extra copy here to show how vertically centering the modal works when combined with scrollable modals. We also use some repeated line breaks to quickly extend the height of the content, thereby triggering the scrolling. When content becomes longer than the predefined max-height of modal, content will be cropped and scrollable within the modal.</p>
+                                            <br><br><br><br><br><br><br><br><br><br>
+                                            <p>Just like that.</p>
+                                            </div>
+                                            <div
+                                                class="modal-footer flex flex-shrink-0 flex-wrap items-center justify-end p-4 border-t border-gray-200 rounded-b-md">
+                                                <button type="button"
+                                                class="inline-block px-6 py-2.5 bg-purple-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-purple-700 hover:shadow-lg focus:bg-purple-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-purple-800 active:shadow-lg transition duration-150 ease-in-out"
+                                                data-bs-dismiss="modal">
+                                                Close
+                                                </button>
+                                                <button type="button"
+                                                class="inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out ml-1">
+                                                Save changes
+                                                </button>
+                                            </div>
+                                            </div>
+                                        </div>
+                                    </div> -->
                                 <?php else: ?>
                                 <?php endif; ?>
                                 
@@ -131,41 +178,8 @@
             </div>
         </div>
     </div>
-<?php
-   
-    // echo $to_date;
-?>
-<p id='day'></p>
 
-    <!-- sidenav link -->
-    <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></script>
-
-    <!-- <script type="text/javascript">
-        //set the date we are counting to
-        var count_id = "<?php //echo $from_date; ?>";
-        var countDownDate = new Date(count_id);
-        console.log(countDownDate.getDate());
-        countDownDate.setDate(countDownDate.getDate()+200);
-        console.log(countDownDate.getDate());
-
-        //update the count down every 1 sec
-        var x = setInterval(function(){
-            //get todays date
-            // var now = new Date().getDay();
-            var now = new Date("<?php //echo $from_date; ?>");
-            // console.log(now.getDate());
-            //find the distance between  now and countdown date
-            var distance = countDownDate - now;
-            var days = Math.floor(distance/(1000 * 60 * 60 * 24));
-            // console.log(days);
-
-            document.getElementById("day").innerHTML=days + "days left";
-            if(distance < 0){
-                clearInterval(x);
-                document.getElementById("day").innerHTML = "Expired";
-            }
-        }, 1000);
-    </script> -->
+    <?php include('../includes/footer_links.php'); ?>
 
 </body>
 </html>

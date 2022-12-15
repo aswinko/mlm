@@ -40,11 +40,14 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- component -->
     <link rel="stylesheet" href="https://kit-pro.fontawesome.com/releases/v5.15.1/css/pro.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/index.min.css" />
 </head>
-<body>
-   
+<body class="bg-slate-50">
 
-    <div class="min-h-screen flex flex-col items-center justify-center bg-gray-300">
+    <?php include('./includes/navbar.php'); ?>
+
+    <div class="flex flex-col items-center justify-center mt-12">
         <div class="flex flex-col bg-white shadow-md px-4 sm:px-6 md:px-8 lg:px-10 py-8 rounded-md w-full max-w-md">
             <div class="font-medium self-center text-xl sm:text-2xl uppercase text-gray-800">Login To Your Account</div>
             <div class="mt-10">
@@ -58,7 +61,7 @@
                                 </svg>
                             </div>
 
-                            <input id="phone_no" type="text" name="phone_no" class="text-sm sm:text-base placeholder-gray-500 pl-10 pr-4 rounded-lg border border-gray-400 w-full py-2 focus:outline-none focus:border-blue-400" placeholder="Mobile number" />
+                            <input id="phone_no" type="text" name="phone_no" class="text-sm sm:text-base placeholder-gray-500 pl-10 pr-4 rounded-lg border border-gray-400 w-full py-2 focus:outline-none focus:border-blue-400" placeholder="Mobile number" required/>
                         </div>
                     </div>
                     <div class="flex flex-col mb-6">
@@ -72,7 +75,7 @@
                                 </span>
                             </div>
 
-                            <input id="password" type="password" name="password" class="text-sm sm:text-base placeholder-gray-500 pl-10 pr-4 rounded-lg border border-gray-400 w-full py-2 focus:outline-none focus:border-blue-400" placeholder="Password" />
+                            <input id="password" type="password" name="password" class="text-sm sm:text-base placeholder-gray-500 pl-10 pr-4 rounded-lg border border-gray-400 w-full py-2 focus:outline-none focus:border-blue-400" placeholder="Password" required/>
                         </div>
                     </div>
 
@@ -106,5 +109,7 @@
             </div>
         </div>
     </div>
+    <!-- //for dropdowns -->
+    <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></script>
 </body>
 </html>

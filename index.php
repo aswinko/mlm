@@ -18,70 +18,15 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/index.min.css" />
 </head>
 <body class="bg-slate-50">
-        <!-- nav -->
-    <nav class="navbar z-50 sticky top-0 navbar-expand-lg shadow-md py-6 bg-white bg-opacity-60 backdrop-filter backdrop-blur-lg relative flex items-center w-full justify-between">
-        <div class="px-6 w-full flex flex-wrap items-center justify-between">
-            <div class="flex items-center">
-                <button
-                class="navbar-toggler border-0 py-3 lg:hidden leading-none text-xl bg-transparent text-gray-600 hover:text-gray-700 focus:text-gray-700 transition-shadow duration-150 ease-in-out mr-2"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContentY"
-                aria-controls="navbarSupportedContentY"
-                aria-expanded="false"
-                aria-label="Toggle navigation"
-                >
-                <svg
-                    aria-hidden="true"
-                    focusable="false"
-                    data-prefix="fas"
-                    class="w-5"
-                    role="img"
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 448 512"
-                >
-                    <path
-                    fill="currentColor"
-                    d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"
-                    ></path>
-                </svg>
-                </button>
-                <a class="navbar-brand text-blue-600" href="#">
-                <svg class="w-5 h-5 ml-2 lg:ml-0 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
-                    <path fill="currentColor" d="M485.5 0L576 160H474.9L405.7 0h79.8zm-128 0l69.2 160H149.3L218.5 0h139zm-267 0h79.8l-69.2 160H0L90.5 0zM0 192h100.7l123 251.7c1.5 3.1-2.7 5.9-5 3.3L0 192zm148.2 0h279.6l-137 318.2c-1 2.4-4.5 2.4-5.5 0L148.2 192zm204.1 251.7l123-251.7H576L357.3 446.9c-2.3 2.7-6.5-.1-5-3.2z"></path>
-                </svg>
-                </a>
-            </div>
-            <div class="navbar-collapse collapse grow items-center" id="navbarSupportedContentY">
-                <ul class="navbar-nav mr-auto lg:flex lg:flex-row">
-                    <li class="nav-item pl-2">
-                        <a class="nav-link block pr-2 lg:px-2 py-2 text-gray-600 hover:text-gray-700 focus:text-gray-700 transition duration-150 ease-in-out" href="#hero" data-mdb-ripple="true" data-mdb-ripple-color="light">Home</a>
-                    </li>
-                    <li class="nav-item pl-2">
-                        <a class="nav-link block pr-2 lg:px-2 py-2 text-gray-600 hover:text-gray-700 focus:text-gray-700 transition duration-150 ease-in-out" href="#features" data-mdb-ripple="true" data-mdb-ripple-color="light">Features</a>
-                    </li>
-                    <!-- <li class="nav-item pl-2">
-                        <a class="nav-link block pr-2 lg:px-2 py-2 text-gray-600 hover:text-gray-700 focus:text-gray-700 transition duration-150 ease-in-out" href="#" data-mdb-ripple="true" data-mdb-ripple-color="light">About</a>
-                    </li> -->
-                    <li class="nav-item mb-2 lg:mb-0 pl-2">
-                        <a class="nav-link block pr-2 lg:px-2 py-2 text-gray-600 hover:text-gray-700 focus:text-gray-700 transition duration-150 ease-in-out" href="#support" data-mdb-ripple="true" data-mdb-ripple-color="light">Support</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="flex items-center lg:ml-auto">
-                <a type="button" href="./login.php" class="inline-block px-6 py-2.5 mr-2 bg-transparent text-blue-600 font-medium text-xs leading-tight uppercase rounded hover:text-blue-700 hover:bg-gray-100 focus:bg-gray-100 focus:outline-none focus:ring-0 active:bg-gray-200 transition duration-150 ease-in-out" data-mdb-ripple="true" data-mdb-ripple-color="light">Login</a>
-                <a type="button" href="./register.php" class="inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out" data-mdb-ripple="true" data-mdb-ripple-color="light">Sign up for free</a>
-            </div>
-        </div>
-    </nav>
-
+    
+    <?php include('./includes/navbar.php'); ?>
     <div class="container mx-auto">
         <!-- Section: Hero Block -->
-        <section class="mb-4 grid content-center h-screen bg-white" id="hero">
+        <section class="mb-4 grid content-center h-screen bg-amber-300" id="hero">
             <div class="text-center text-gray-800 py-24 px-6">
-                <h1 class="text-5xl md:text-6xl xl:text-7xl font-bold tracking-tight mb-12">The best offer on the market <br /><span class="text-blue-600">for your business</span></h1>
+                <h1 class="text-4xl md:text-6xl xl:text-7xl font-bold tracking-tight mb-12">Let's stand together for a <br /><span class="text-blue-600">better change</span></h1>
                 <a class="inline-block px-7 py-3 mr-2 bg-blue-600 text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out" data-mdb-ripple="true" data-mdb-ripple-color="light" href="./register.php" role="button">Get started</a>
-                <a class="inline-block px-7 py-3 bg-transparent text-blue-600 font-medium text-sm leading-snug uppercase rounded hover:text-blue-700 hover:bg-gray-100 focus:bg-gray-100 focus:outline-none focus:ring-0 active:bg-gray-200 transition duration-150 ease-in-out" data-mdb-ripple="true" data-mdb-ripple-color="light" href="#!" role="button">Learn more</a>
+                <!-- <a class="inline-block px-7 py-3 bg-transparent text-blue-600 font-medium text-sm leading-snug uppercase rounded hover:text-blue-700 hover:bg-gray-100 focus:bg-gray-100 focus:outline-none focus:ring-0 active:bg-gray-200 transition duration-150 ease-in-out" data-mdb-ripple="true" data-mdb-ripple-color="light" href="#!" role="button">Learn more</a> -->
             </div>
         </section>
         <!-- Section: hero Block -->
@@ -103,11 +48,11 @@
                         </div>
                     </div>
                     <div class="p-6">
-                        <h5 class="text-lg font-semibold mb-4">Support 24/7</h5>
-                        <p>
-                        Laudantium totam quas cumque pariatur at doloremque hic quos quia eius. Reiciendis
-                        optio minus mollitia rerum labore facilis inventore voluptatem ad, quae quia sint.
-                        Ullam.
+                        <h5 class="text-lg font-semibold mb-4">Service</h5>
+                        <p class="text-left break-all">
+                        Bekart ensures basic services that are expected of every e-commerce site, i.e, a broad selection range, 
+                        timely delivery and on-time customer assistance, unfailingly every time. We go a step further to deliver 
+                        products at a price range just above the production rate.
                         </p>
                     </div>
                     </div>
@@ -125,10 +70,12 @@
                         </div>
                     </div>
                     <div class="p-6">
-                        <h5 class="text-lg font-semibold mb-4">Safe and solid</h5>
-                        <p>
-                        Eum nostrum fugit numquam, voluptates veniam neque quibusdam ullam aspernatur odio
-                        soluta, quisquam dolore animi mollitia a omnis praesentium, expedita nobis!
+                        <h5 class="text-lg font-semibold mb-4">Genuine Quality</h5>
+                        <p class="text-left break-all">
+                        Bekart is a dynamic e-commerce website that provides an array of genuine and quality products, 
+                        ranging from grocery to fashion to electronics and everything in between, at the lowest possible rate. 
+                        The choice of brands is a combination of all brands available online and offline. Including the known & 
+                        trusted, the new & emerging brands of all shapes and sizes.
                         </p>
                     </div>
                     </div>
@@ -146,9 +93,10 @@
                     </div>
                     <div class="p-6">
                         <h5 class="text-lg font-semibold mb-4">Extremely fast</h5>
-                        <p>
-                        Enim cupiditate, minus nulla dolor cumque iure eveniet facere ullam beatae hic
-                        voluptatibus dolores exercitationem? Facilis debitis aspernatur amet nisi?
+                        <p class="text-left break-all">
+                        Bekart is an effort to utilise technology creatively, to deliver products at the 
+                        least possible rate. It has been made possible primarily through the platform provided 
+                        by e-commerce and our well-constructed mutually beneficial ecosystem of business.
                         </p>
                     </div>
                     </div>
@@ -182,7 +130,11 @@
                     <div class="lg:pl-12">
                         <h2 class="text-3xl font-bold mb-6">What are you waiting for?</h2>
                         <p class="mb-6 pb-2 lg:pb-0">
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maxime, sint, repellat vel quo quisquam accusamus in qui at ipsa enim quibusdam illo laboriosam omnis. Labore itaque illum distinctio eum neque!
+                        Our workforce, on the other hand, ensures the quality of each product showcased on our online store.
+                        Bekart functions by connecting people. It relies on the traditional marketing system of word of mouth
+                        to reach out to new customers. Each of our customers has the privilege to save as they buy and earn as they 
+                        connect. We have designed a system where the profits are shared with our customers, associates and other affiliates, 
+                        to address their
                         </p>
                         <a type="button" href="./register.php" class="inline-block px-7 py-3 border-2 border-white text-white font-medium text-sm leading-snug uppercase rounded-full hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out" data-mdb-ripple="true" data-mdb-ripple-color="light">Sign up now</a>
                     </div>

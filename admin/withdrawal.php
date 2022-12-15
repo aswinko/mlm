@@ -23,18 +23,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>admin</title>
-    <!-- tailwind css -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- <link rel="stylesheet" href="https://unpkg.com/flowbite@1.5.1/dist/flowbite.min.css" /> -->
-    <!-- font awesome link -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/index.min.css" />
-    
+    <?php include('../includes/header_links.php'); ?>
 </head>
 <body class="bg-slate-100">
     <?php include('./sidebar.php'); ?>
-    <div class="container mx-auto lg:px-32 lg:pl-64 pt-12">
+    <div class="container mx-auto lg:px-32 lg:pl-72 px-2 pt-8">
+        <h2 class="text-xl font-semibold text-gray-700 mb-6">Withdraw Approval</h2>
         <div class="flex flex-col">
             <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
                 <div class="py-2 inline-block min-w-full sm:px-6 lg:px-8">
@@ -111,8 +105,6 @@
         </div>
     </div>
 
-    <!-- sidenav link -->
-    <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></script>
-
+    <?php include('../includes/footer_links.php'); ?>
 </body>
 </html>

@@ -32,15 +32,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>E-Pin history</title>
-    <!-- tailwind css -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- <link rel="stylesheet" href="https://unpkg.com/flowbite@1.5.1/dist/flowbite.min.css" /> -->
-    <!-- font awesome link -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/index.min.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
-    
+    <?php include('../includes/header_links.php'); ?>
+
 </head>
 <body class="bg-slate-100">
     <?php include('./sidebar.php'); ?>
@@ -99,9 +92,6 @@
     </section>
 
 
-
-    <!-- sidenav link -->
-    <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></script>
     <script>
         function copyText() {
             /* Copy text into clipboard */
@@ -112,10 +102,6 @@
             alert("Copied the text: " + ref_link);
         }                                                                                   
     </script>
-    <script>
-        function Openbar() {
-            document.querySelector('.sidebar').classList.toggle('left-[-300px]')
-        }
-    </script>
+    <?php include('../includes/footer_links.php'); ?>
 </body>
 </html>

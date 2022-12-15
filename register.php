@@ -16,16 +16,16 @@
         }
         
 
-        $name = $password = $email = $phone_no = '';
-        $errors = array('name' => '', 'password' => '', 'email' => '', 'phone_no' => '');
+        $name = $password = $phone_no = '';
+        $errors = array('name' => '', 'password' => '', 'phone_no' => '');
     
         if (isset($_POST['register'])){
 
             if(empty($_POST['name'])){
                 $errors['name'] = 'Name is required.';
             }else {
-                $fullname = $_POST['name'];
-                if(!preg_match('/^[a-zA-Z\s]+$/', $fullname)){
+                $name = $_POST['name'];
+                if(!preg_match('/^[a-zA-Z\s]+$/', $name)){
                     $errors['name'] = 'Name must be letters.';
                 }
             }
@@ -49,28 +49,28 @@
                 }
             }
     
-            if(empty($_POST['email'])){
-                $errors['email'] = 'Email is required.';
-            }else {
-                $email = $_POST['email'];
-                if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
-                    $errors['email'] = 'Email must be a valid email address.';
-                }
-            }
+            // if(empty($_POST['email'])){
+            //     $errors['email'] = 'Email is required.';
+            // }else {
+            //     $email = $_POST['email'];
+            //     if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
+            //         $errors['email'] = 'Email must be a valid email address.';
+            //     }
+            // }
     
             if(array_filter($errors)){
     
             }else {
                 $name = mysqli_real_escape_string($conn, $_POST['name']);
                 $phone_no = mysqli_real_escape_string($conn, $_POST['phone_no']);
-                $email = mysqli_real_escape_string($conn, $_POST['email']);
+                // $email = mysqli_real_escape_string($conn, $_POST['email']);
                 $password = mysqli_real_escape_string($conn, $_POST['password']);
                 $ref_id = str_replace(' ', '', $name) . uniqid();
                 
                 $sponser_id = mysqli_real_escape_string($conn, $_POST['sponser_id']);
                 $ref_income = 0.0;
                 //signup function call
-                user_signup($name, $phone_no, $email, $password, $ref_id, $sponser_id, $ref_income);
+                user_signup($name, $phone_no, $password, $ref_id, $sponser_id, $ref_income);
             }
         }
     }
@@ -89,11 +89,15 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- component -->
     <link rel="stylesheet" href="https://kit-pro.fontawesome.com/releases/v5.15.1/css/pro.min.css" />
-</head>
-<body>
-   
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/index.min.css" />
 
-    <div class="min-h-screen flex flex-col items-center justify-center bg-gray-300">
+</head>
+<body class="bg-slate-50">
+   
+    <?php include('./includes/navbar.php'); ?>
+
+    <div class="flex flex-col items-center justify-center mt-2 mb-4">
         <div class="flex flex-col bg-white shadow-md px-4 sm:px-6 md:px-8 lg:px-10 py-8 rounded-md w-full max-w-md">
             <div class="font-medium self-center text-xl sm:text-2xl uppercase text-gray-800">Register Your Account</div>
             <div class="mt-10">
@@ -107,7 +111,7 @@
                                 </svg>
                             </div>
 
-                            <input id="name" type="text" name="name" class="text-sm sm:text-base placeholder-gray-500 pl-10 pr-4 rounded-lg border border-gray-400 w-full py-2 focus:outline-none focus:border-blue-400" placeholder="Name" required/>
+                            <input id="name" type="text" name="name" value="<?php echo htmlspecialchars($name); ?>" class="text-sm sm:text-base placeholder-gray-500 pl-10 pr-4 rounded-lg border border-gray-400 w-full py-2 focus:outline-none focus:border-blue-400" placeholder="Name" required/>
                         </div>
                         <div class="text-rose-700 text-xs"><?php echo $errors['name']; ?></div>
                     </div>
@@ -119,11 +123,11 @@
                                     <path d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207" />
                                 </svg>
                             </div>
-                            <input id="phone_no" type="text" name="phone_no" class="text-sm sm:text-base placeholder-gray-500 pl-10 pr-4 rounded-lg border border-gray-400 w-full py-2 focus:outline-none focus:border-blue-400" placeholder="Mobile number" required/>
+                            <input id="phone_no" type="text" name="phone_no" value="<?php echo htmlspecialchars($phone_no); ?>" class="text-sm sm:text-base placeholder-gray-500 pl-10 pr-4 rounded-lg border border-gray-400 w-full py-2 focus:outline-none focus:border-blue-400" placeholder="Mobile number" required/>
                         </div>
                         <div class="text-rose-700 text-xs"><?php echo $errors['phone_no']; ?></div>
                     </div>
-                    <div class="flex flex-col mb-6">
+                    <!-- <div class="flex flex-col mb-6">
                         <label for="email" class="mb-1 text-xs sm:text-sm tracking-wide text-gray-600">E-Mail Address:</label>
                         <div class="relative">
                             <div class="inline-flex items-center justify-center absolute left-0 top-0 h-full w-10 text-gray-400">
@@ -132,10 +136,10 @@
                                 </svg>
                             </div>
 
-                            <input id="email" type="email" name="email" class="text-sm sm:text-base placeholder-gray-500 pl-10 pr-4 rounded-lg border border-gray-400 w-full py-2 focus:outline-none focus:border-blue-400" placeholder="E-Mail Address" required/>
+                            <input id="email" type="email" name="email" value="<?php echo htmlspecialchars($email); ?>" class="text-sm sm:text-base placeholder-gray-500 pl-10 pr-4 rounded-lg border border-gray-400 w-full py-2 focus:outline-none focus:border-blue-400" placeholder="E-Mail Address" required/>
                         </div>
                         <div class="text-rose-700 text-xs"><?php echo $errors['email']; ?></div>
-                    </div>
+                    </div> -->
                     <div class="flex flex-col mb-6">
                         <label for="password" class="mb-1 text-xs sm:text-sm tracking-wide text-gray-600">Password:</label>
                         <div class="relative">
@@ -170,6 +174,7 @@
 
                             <input id="sponser_id" value="<?php echo $get_sponser_id; ?>" type="text" name="sponser_id" class="text-sm sm:text-base placeholder-gray-500 pl-10 pr-4 rounded-lg border border-gray-400 w-full py-2 focus:outline-none focus:border-blue-400" placeholder="Referral Code"/>
                         </div>
+                        <div class="text-rose-700 text-xs"><?php if(isset($_SESSION['invalid_ref_id']) && $_SESSION['invalid_ref_id'] != '') {echo $_SESSION['invalid_ref_id']; unset($_SESSION['invalid_ref_id']);} ?></div>
                     </div>
 
                     <div class="flex w-full">
@@ -196,5 +201,7 @@
             </div>
         </div>
     </div>
+    <!-- //for dropdowns -->
+    <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></script>
 </body>
 </html>

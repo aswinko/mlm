@@ -35,24 +35,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Generate E-Pin</title>
-    <!-- tailwind css -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- <link rel="stylesheet" href="https://unpkg.com/flowbite@1.5.1/dist/flowbite.min.css" /> -->
-    <!-- font awesome link -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/index.min.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
-    <!-- jquery -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-    
+    <?php include('../includes/header_links.php'); ?>
+
 </head>
 <body class="bg-slate-100">
     <?php include('./sidebar.php'); ?>
 
     <section class="container mx-auto lg:pl-64 px-4">
-        <h2 class="pt-10 lg:px-10 text-2xl font-bold">E-Pin</h2>
-        <div class=" flex flex-col items-center justify-center mt-12">
+        <!-- <h2 class="pt-10 lg:px-10 text-2xl font-bold">E-Pin</h2> -->
+        <div class=" flex flex-col items-center justify-center mt-20">
             <div class="flex flex-col bg-white shadow-md px-4 sm:px-6 md:px-8 lg:px-10 py-8 rounded-md w-full max-w-md">
                 <?php if($get_num_rows > 0): ?>
                     <p class="text-rose-700 font-bold text-center">E-Pin already purchased.</p>
@@ -79,6 +70,15 @@
                                     <input disabled id="total_amount" type="text" name="total_amount" class="text-sm sm:text-base bg-slate-100 placeholder-gray-500 pl-4 pr-4 rounded-lg border border-gray-400 w-full py-2 focus:outline-none focus:border-blue-400" placeholder="Total amount" required/>
                                 </div>
                             </div>
+                            <div class="flex flex-col mb-6 bg-slate-50 p-2 rounded-lg border-2">
+                                <label for="" class="mb-1 text-xs font-semibold sm:text-sm tracking-wide text-gray-600">Amount send to :
+                                    <ul>
+                                        <li class="indent-8 font-normal">Account no: 343243242</li>
+                                        <li class="indent-8 font-normal">IFSC : fdrl00000322322</li>
+                                        <li class="indent-8 font-normal">Branch Name: Kottayam</li>
+                                    </ul>
+                                </label>
+                            </div>
                             <div class="flex flex-col mb-6">  
                                 <label for="formFile" class="form-label inline-block mb-2 text-gray-700">Upload transcation img:</label>
                                 <input name="transcation_img" class="form-control block w-full px-3 py-2 text-base font-normal text-gray-700 bg-slate-100 bg-clip-padding border border-solid border-gray-300 rounded-lg transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" type="file" id="formFile" required>
@@ -102,19 +102,12 @@
         </div>
     </section>
 
-    <!-- sidenav link -->
-    <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></script>
-
     <script>
         function getValue(){
             var valSelect = $("#epin_price").val();
             $("#total_amount").val(valSelect);
         }
     </script>
-    <script>
-        function Openbar() {
-            document.querySelector('.sidebar').classList.toggle('left-[-300px]')
-        }
-    </script>
+    <?php include('../includes/footer_links.php'); ?>
 </body>
 </html>

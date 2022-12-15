@@ -6,34 +6,41 @@
         header("Location: ./login.php"); 
     }
 
-    $num=1;    
-
-    $sql = "SELECT * FROM epin ORDER BY id DESC";
+    $sql = "SELECT * FROM user";
     $res = mysqli_query($conn, $sql);
-    $record = mysqli_fetch_all($res, MYSQLI_ASSOC);
-
+    $record = mysqli_num_rows($res);
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>admin</title>
-    <!-- tailwind css -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- <link rel="stylesheet" href="https://unpkg.com/flowbite@1.5.1/dist/flowbite.min.css" /> -->
-    <!-- font awesome link -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/index.min.css" />
-    
-</head>
-<body>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Admin</title>
+        <?php include('../includes/header_links.php'); ?>
+    </head>
+    <body>
         <?php include('./sidebar.php'); ?>
 
-    <!-- sidenav link -->
-    <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></script>
 
-</body>
+        <section class="container mx-auto lg:pl-72 px-6 mb-8">
+            <h2 class="pt-10 text-2xl font-bold">Dashboard</h2>
+            <div class="card grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-2 grid-cols-1 gap-4 justify-evenly">
+                <div class="columns-1 w-[100%] mt-5">
+                    <div class="grid grid-cols-2 gap-1 block p-6 rounded-lg shadow-lg bg-white max-w-sm py-10">
+                        <div class="left columns-1">
+                            <i class="fa-solid fa-user text-gray-500 text-4xl"></i>
+                            <p class="text-gray-500 leading-tight font-medium text-m text-base">Users</p>
+                        </div>
+                        <div class="columns-1 right flex flex-row justify-end">
+                            <p class="text-gray-500 text-3xl mb-4 ml-1"><?php echo $record; ?></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <?php include('../includes/footer_links.php'); ?>
+    </body>
+</html>

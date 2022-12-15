@@ -24,9 +24,13 @@
                 $up_query = "UPDATE user SET todays_roi = '$cal', total_roi = total_roi + '$cal', roi_updated_at = NOW(), package_expiry = package_expiry - 1 WHERE id = '$user_id'";
                 $res_update = mysqli_query($conn, $up_query);
                 if($res_update){
-                    echo "success"; 
+                    //update wallet amount
                     $up_query = "UPDATE user SET wallet = wallet + total_roi WHERE id = '$user_id'";
                     $res_update = mysqli_query($conn, $up_query);
+
+                    //inser current roi in roi table
+                    $sql = "INSERT INTO roi (current_roi) VALUES ('$roi_in_percent')";
+                    $query = mysqli_query($conn, $sql);
                 }else {
                     // echo mysqli_error($conn);
                 }
@@ -46,27 +50,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Today's ROI</title>
-    <!-- tailwind css -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- <link rel="stylesheet" href="https://unpkg.com/flowbite@1.5.1/dist/flowbite.min.css" /> -->
-    <!-- font awesome link -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/index.min.css" />
-    <!-- jquery -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-    
+    <?php include('../includes/header_links.php'); ?>
 </head>
 <body class="bg-slate-100">
     <?php include('./sidebar.php'); ?>
 
-    <section class="container mx-auto pl-64">
-        <h2 class="pt-10 text-2xl font-bold text-gray-600">ROI</h2>
+    <section class="container mx-auto lg:pl-64 px-2 pt-12">
+        <!-- <h2 class="pt-10 text-2xl font-bold text-gray-600">ROI</h2> -->
         <div class=" flex flex-col items-center justify-center mt-12">
             <div class="flex flex-col bg-white shadow-md px-4 sm:px-6 md:px-8 lg:px-10 py-8 rounded-md w-full max-w-md">
-                <div class="font-medium text-xl sm:text-xl text-gray-800">Today's ROI</div>
+                <div class="font-medium text-center text-xl sm:text-xl text-gray-800">Today's ROI</div>
                 <div class="mt-10">
-                    <form action="" method="post" enctype="multipart/form-data">
+                    <form action="" method="post">
                         <div class="flex flex-col mb-6">
                             <label for="roi_in_percent" class="mb-1 text-xs sm:text-sm tracking-wide text-gray-600">Today's ROI <span>eg(10%)</span>:</label>
                             <div class="relative">
@@ -89,9 +84,7 @@
         </div>
     </section>
 
-    <!-- sidenav link -->
-    <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></script>
-
+    <?php include('../includes/footer_links.php'); ?>
     <script>
         function getValue(){
             var valSelect = $("#epin_price").val();

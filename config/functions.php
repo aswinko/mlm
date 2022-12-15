@@ -748,30 +748,29 @@ include 'db_connect.php';
 
 
 
-
-
-
-
-
-
-
-
-    function user_signup($name, $phone_no, $email, $password, $ref_id, $sponser_id, $ref_income) {
+    function user_signup($name, $phone_no, $password, $ref_id, $sponser_id, $ref_income) {
 
         global $conn;
 
-        $sql = "SELECT * FROM user WHERE phone_no = '$phone_no' || email = '$email'";
+        $sql = "SELECT * FROM user WHERE phone_no = '$phone_no'";
         $result= mysqli_query($conn, $sql);
         $num = mysqli_num_rows($result);
 
+        $sql_ref_id = "SELECT * FROM user WHERE ref_id='$sponser_id'";
+        $query_ref_id= mysqli_query($conn, $sql_ref_id);
+        $check_sponser_id = mysqli_num_rows($query_ref_id);
+            
         if($num > 0){
-            echo "<script>alert('Mobile number or Email is already exist!')</script>";
+            echo "<script>alert('Mobile number is already exist!')</script>";
             // $_SESSION['status'] = "Username is already exist!";
             // $_SESSION['status_code'] = "warning";
+        }else if($check_sponser_id == 0 && $sponser_id != null) {
+            // echo "<script>alert('Your referal id doesn't exist!')</script>";
+            $_SESSION['invalid_ref_id'] = "Invalid referal code!";
         }else {
 
-            $sql = "INSERT INTO user(name, phone_no, email, password, ref_id, sponser_id, ref_income)
-            VALUES ('$name', '$phone_no', '$email', '$password', '$ref_id', '$sponser_id', '$ref_income')";
+            $sql = "INSERT INTO user(name, phone_no, password, ref_id, sponser_id, ref_income)
+            VALUES ('$name', '$phone_no', '$password', '$ref_id', '$sponser_id', '$ref_income')";
 
             $res = mysqli_query($conn, $sql) or die(mysqli_error($conn));
 
@@ -785,6 +784,35 @@ include 'db_connect.php';
                 echo 'Query error' . mysqli_error($conn);
             }
         }
+    }
+
+    function update_user($name, $phone_no, $user_id){
+        global $conn;
+
+        $sql = "SELECT * FROM user WHERE phone_no = '$phone_no'";
+        $result= mysqli_query($conn, $sql);
+        $num = mysqli_num_rows($result);
+            
+        // if($num > 0){
+        //     echo "<script>alert('Mobile number is already exist!')</script>";
+        //     // $_SESSION['status'] = "Username is already exist!";
+        //     // $_SESSION['status_code'] = "warning";
+        // }else {
+
+            $sql = "UPDATE user SET name = '$name', phone_no = '$phone_no' WHERE id = '$user_id'";
+
+            $res = mysqli_query($conn, $sql) or die(mysqli_error($conn));
+
+            if($res) {
+                // echo "Successfully registered";
+                header("Location: users.php");
+
+                //generate refferal income for first leve(10%) 
+
+            }else{
+                echo 'Query error' . mysqli_error($conn);
+            }
+        // }
     }
 
     function user_login($phone_no, $password) {
