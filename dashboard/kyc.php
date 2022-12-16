@@ -105,7 +105,7 @@
                     <?php if($get_num_rows > 0): ?>
                         <p class="text-rose-800 font-bold italic">Contact Admin to change kyc details.</p>
                     <?php else: ?>
-                        <button type="submit" name="kyc_submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
+                        <button type="submit" name="kyc_submit" class="text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:outline-none focus:ring-purple-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-800">Submit</button>
                     <?php endif; ?>
                 </form>
             </div>

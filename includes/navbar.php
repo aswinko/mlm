@@ -26,12 +26,12 @@
                     ></path>
                 </svg>
                 </button>
-                <a class="navbar-brand text-blue-600" href="#">
-                    <img src="./assets/icons/bekartlogo.svg" alt="logo" class="px-2 rounded-md w-12">
+                <a class="navbar-brand text-blue-600" href="./index.php">
+                    <img src="./assets/icons/bekartlogo.svg" alt="logo" class="px-2 rounded-md w-14">
                 </a>
             </div>
             <div class="navbar-collapse collapse grow items-center" id="navbarSupportedContentY">
-                <ul class="navbar-nav mr-auto lg:flex lg:flex-row">
+                <ul class="navbar-nav mr-auto lg:flex lg:flex-row lg:ml-10">
                     <li class="nav-item pl-2">
                         <a class="nav-link block pr-2 lg:px-2 py-2 text-gray-600 hover:text-gray-700 focus:text-gray-700 transition duration-150 ease-in-out" href="index.php#hero" data-mdb-ripple="true" data-mdb-ripple-color="light">Home</a>
                     </li>
@@ -44,8 +44,8 @@
                 </ul>
             </div>
             <div class="flex items-center lg:ml-auto">
-                <a type="button" href="./login.php" class="inline-block px-6 py-2.5 mr-2 bg-transparent text-blue-600 font-medium text-xs leading-tight uppercase rounded hover:text-blue-700 hover:bg-gray-100 focus:bg-gray-100 focus:outline-none focus:ring-0 active:bg-gray-200 transition duration-150 ease-in-out" data-mdb-ripple="true" data-mdb-ripple-color="light">Login</a>
-                <a type="button" href="./register.php" class="inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out" data-mdb-ripple="true" data-mdb-ripple-color="light">Sign up for free</a>
+                <a type="button" href="./login.php" class="inline-block px-1 sm:px-6 py-2.5 mr-2 bg-transparent text-purple-500 font-medium text-xs leading-tight uppercase rounded hover:text-purple-600 hover:bg-gray-100 focus:bg-gray-100 focus:outline-none focus:ring-0 active:bg-gray-200 transition duration-150 ease-in-out" data-mdb-ripple="true" data-mdb-ripple-color="light">Login</a>
+                <a type="button" href="./register.php" class="inline-block px-2 sm:px-6 py-2.5 bg-purple-500 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-purple-600 hover:shadow-lg focus:bg-purple-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-purple-800 active:shadow-lg transition duration-150 ease-in-out" data-mdb-ripple="true" data-mdb-ripple-color="light">Sign up for free</a>
             </div>
         </div>
     </nav>

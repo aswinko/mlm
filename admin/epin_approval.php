@@ -94,7 +94,8 @@
                                             </td>
                                             <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
                                                 <?php if($records['status'] == 'Approved'): ?>
-                                                    <i class="fa-solid fa-check"></i>
+                                                    <!-- <i class="fa-solid fa-check"></i> -->
+                                                    <img class="w-6" src="../assets/icons/check.svg" alt="" style="filter: invert(72%) sepia(9%) saturate(361%) hue-rotate(179deg) brightness(90%) contrast(86%);">
                                                     <!-- <p>Completed</p> -->
                                                 <?php else: ?>
                                                     <a href="./epin_approve.php?id=<?php echo htmlspecialchars($records['id']); ?>&user_id=<?php echo htmlspecialchars($records['user_id']) ?>" class="rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white p-2">Approve</a>
@@ -112,7 +113,8 @@
                                                 <div class="modal-content border-none shadow-lg relative flex flex-col w-full pointer-events-auto bg-white bg-clip-padding rounded-md outline-none text-current">
                                                     <div class="modal-header flex flex-shrink-0 items-center justify-between p-4 border-b border-gray-200 rounded-t-md">
                                                         <button type="button" class="btn-close box-content w-6 h-6 p-1 text-gray-800 border-none rounded-none opacity-50 focus:shadow-none focus:outline-none focus:opacity-100 hover:text-black hover:opacity-75 hover:no-underline"
-                                                        data-bs-dismiss="modal" aria-label="Close"><i class="fa-solid fa-xmark text-xl"></i>
+                                                        data-bs-dismiss="modal" aria-label="Close">
+                                                        <img class="w-6" src="../assets/icons/cross-circle.svg" alt="" style="filter: invert(72%) sepia(9%) saturate(361%) hue-rotate(179deg) brightness(90%) contrast(86%);">
                                                         </button>
                                                     </div>
                                                     <div class="modal-body relative p-4">

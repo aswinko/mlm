@@ -23,6 +23,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>admin</title>
+    
     <?php include('../includes/header_links.php'); ?>
 </head>
 <body class="bg-slate-100">
@@ -82,7 +83,7 @@
                                             </td>
                                             <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
                                                 <?php if($records['withdraw_status'] == 'Success'): ?>
-                                                    <i class="fa-solid fa-check"></i>
+                                                    <img class="w-6" src="../assets/icons/check.svg" alt="" style="filter: invert(72%) sepia(9%) saturate(361%) hue-rotate(179deg) brightness(90%) contrast(86%);">
                                                 <?php else: ?>
                                                     <a href="./withdrawal_approve.php?id=<?php echo htmlspecialchars($records['id']); ?>" class="rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white p-2">Approve</a>
                                                 <?php endif; ?>

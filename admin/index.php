@@ -18,6 +18,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Admin</title>
+        
         <?php include('../includes/header_links.php'); ?>
     </head>
     <body>
@@ -30,7 +31,7 @@
                 <div class="columns-1 w-[100%] mt-5">
                     <div class="grid grid-cols-2 gap-1 block p-6 rounded-lg shadow-lg bg-white max-w-sm py-10">
                         <div class="left columns-1">
-                            <i class="fa-solid fa-user text-gray-500 text-4xl"></i>
+                            <img class="w-10 mb-2" src="../assets/icons/user.svg" alt="" style="filter: invert(72%) sepia(9%) saturate(361%) hue-rotate(179deg) brightness(90%) contrast(86%);">
                             <p class="text-gray-500 leading-tight font-medium text-m text-base">Users</p>
                         </div>
                         <div class="columns-1 right flex flex-row justify-end">

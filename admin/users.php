@@ -22,6 +22,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>admin</title>
+    
     <?php include('../includes/header_links.php'); ?>
 </head>
 <body class="bg-slate-100">
@@ -109,7 +110,7 @@
                                             </td>
                                             <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
                                                 <a href="./update_user.php?user_id=<?php echo htmlspecialchars($records['id']); ?>">
-                                                    <i class="fa-solid fa-pen-to-square text-gray-500 text-md"></i>
+                                                    <img class="w-6" src="../assets/icons/edit.svg" alt="" style="filter: invert(72%) sepia(9%) saturate(361%) hue-rotate(179deg) brightness(90%) contrast(86%);">
                                                 </a>
                                             </td>
                                             <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">

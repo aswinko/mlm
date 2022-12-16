@@ -41,93 +41,116 @@
         <h2 class="pt-10 text-2xl font-bold">Dashboard</h2>
         <div class="card grid xl:grid-cols-3 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-2 gap-4 justify-evenly">
             <div class="columns-1 w-[100%] mt-5">
-                <div class="grid grid-cols-2 gap-1 block p-6 rounded-lg shadow-lg bg-white max-w-sm py-10">
+                <div class="grid grid-cols-2 gap-1 block p-6 rounded-xl shadow-lg bg-purple-100 max-w-sm py-10">
                     <div class="left columns-1">
-                        <i class="fa-solid fa-wallet text-gray-500 text-4xl"></i>
-                        <p class="text-gray-500 leading-tight font-medium text-m text-base">Wallet</p>
+                        <!-- <i class="fa-solid fa-wallet text-purple-800 text-4xl"></i> -->
+                        <img class="w-10" src="../assets/icons/wallet.svg" alt="" style="filter: invert(27%) sepia(100%) saturate(3839%) hue-rotate(262deg) brightness(93%) contrast(97%);">
+                        <p class="text-purple-500 leading-tight font-medium text-m text-base">Wallet</p>
                     </div>
                     <div class="columns-1 right flex flex-row justify-end">
-                        <i class="fa-solid fa-indian-rupee-sign text-gray-500 text-4xl"></i>
-                        <p class="text-gray-500 text-3xl mb-4 ml-1"><?php echo $wallet_amount; ?></p>
+                        <svg fill="#A855F7" class="w-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                            <path d="M0 64C0 46.3 14.3 32 32 32H96h16H288c17.7 0 32 14.3 32 32s-14.3 32-32 32H231.8c9.6 14.4 16.7 30.6 20.7 48H288c17.7 0 
+                            32 14.3 32 32s-14.3 32-32 32H252.4c-13.2 58.3-61.9 103.2-122.2 110.9L274.6 422c14.4 10.3 17.7 30.3 7.4 44.6s-30.3 17.7-44.6 7.4L13.4 
+                            314C2.1 306-2.7 291.5 1.5 278.2S18.1 256 32 256h80c32.8 0 61-19.7 73.3-48H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H185.3C173 115.7 144.8 
+                            96 112 96H96 32C14.3 96 0 81.7 0 64z"/>
+                        </svg>
+                        <p class="text-purple-800 text-3xl mb-4 ml-1 mt-2"><?php echo $wallet_amount; ?></p>
                     </div>
                 </div>
             </div>
             <div class="columns-1 w-[100%] mt-5">
-                <div class="grid grid-cols-2 gap-1 block p-6 rounded-lg shadow-lg bg-white max-w-sm py-10">
+                <div class="grid grid-cols-2 gap-1 block p-6 rounded-xl shadow-lg bg-purple-100 max-w-sm py-10">
                     <div class="left columns-1">
-                        <!-- <i class="fa-solid fa-wallet text-gray-500 text-4xl"></i> -->
-                        <i class="fa-solid fa-money-check text-gray-500 text-4xl"></i>
-                        <p class="text-gray-500 leading-tight font-medium text-m text-base">Level Income</p>
+                    <img class="w-10" src="../assets/icons/money-check.svg" alt="" style="filter: invert(27%) sepia(100%) saturate(3839%) hue-rotate(262deg) brightness(93%) contrast(97%);">
+                        <p class="text-purple-800 leading-tight font-medium text-m text-base">Level Income</p>
                     </div>
                     <div class="columns-1 right flex flex-row justify-end">
-                        <i class="fa-solid fa-indian-rupee-sign text-gray-500 text-4xl"></i>
+                        <svg fill="#A855F7  " class="w-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                            <path d="M0 64C0 46.3 14.3 32 32 32H96h16H288c17.7 0 32 14.3 32 32s-14.3 32-32 32H231.8c9.6 14.4 16.7 30.6 20.7 48H288c17.7 0 
+                            32 14.3 32 32s-14.3 32-32 32H252.4c-13.2 58.3-61.9 103.2-122.2 110.9L274.6 422c14.4 10.3 17.7 30.3 7.4 44.6s-30.3 17.7-44.6 7.4L13.4 
+                            314C2.1 306-2.7 291.5 1.5 278.2S18.1 256 32 256h80c32.8 0 61-19.7 73.3-48H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H185.3C173 115.7 144.8 
+                            96 112 96H96 32C14.3 96 0 81.7 0 64z"/>
+                        </svg>
                         
-                        <p class="text-gray-500 text-3xl mb-4 ml-1"><?php echo $level_income; ?></p>
+                        <p class="text-purple-800 text-3xl mb-4 ml-1 mt-2"><?php echo $level_income; ?></p>
                     </div>
                 </div>
             </div>
             <div class="columns-1 w-[100%] mt-5">
-                <div class="grid grid-cols-2 gap-1 block p-6 rounded-lg shadow-lg bg-white max-w-sm py-10">
+                <div class="grid grid-cols-2 gap-1 block p-6 rounded-xl shadow-lg bg-purple-100 max-w-sm py-10">
                     <div class="left columns-1">
-                        <!-- <i class="fa-solid fa-wallet text-gray-500 text-4xl"></i> -->
-                        <i class="fa-solid fa-money-bill-wave text-gray-500 text-4xl"></i>
-                        <p class="text-gray-500 leading-tight font-medium text-m text-base">Referral Income</p>
+                    <img class="w-10" src="../assets/icons/money-bill-wave.svg" alt="" style="filter: invert(27%) sepia(100%) saturate(3839%) hue-rotate(262deg) brightness(93%) contrast(97%);">
+                        <p class="text-purple-800 leading-tight font-medium text-m text-base">Referral Income</p>
                     </div>
                     <div class="columns-1 right flex flex-row justify-end">
-                        <i class="fa-solid fa-indian-rupee-sign text-gray-500 text-4xl"></i>
-                        <p class="text-gray-500 text-3xl mb-4 ml-1"><?php echo $ref_income; ?></p>
+                        <svg fill="#A855F7  " class="w-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                            <path d="M0 64C0 46.3 14.3 32 32 32H96h16H288c17.7 0 32 14.3 32 32s-14.3 32-32 32H231.8c9.6 14.4 16.7 30.6 20.7 48H288c17.7 0 
+                            32 14.3 32 32s-14.3 32-32 32H252.4c-13.2 58.3-61.9 103.2-122.2 110.9L274.6 422c14.4 10.3 17.7 30.3 7.4 44.6s-30.3 17.7-44.6 7.4L13.4 
+                            314C2.1 306-2.7 291.5 1.5 278.2S18.1 256 32 256h80c32.8 0 61-19.7 73.3-48H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H185.3C173 115.7 144.8 
+                            96 112 96H96 32C14.3 96 0 81.7 0 64z"/>
+                        </svg>
+                        <p class="text-purple-800 text-3xl mb-4 ml-1 mt-2"><?php echo $ref_income; ?></p>
                     </div>
                 </div>
             </div>
             <div class="columns-1 w-[100%] mt-5">
-                <div class="grid grid-cols-2 gap-1 block p-6 rounded-lg shadow-lg bg-white max-w-sm py-10">
+                <div class="grid grid-cols-2 gap-1 block p-6 rounded-xl shadow-lg bg-purple-100 max-w-sm py-10">
                     <div class="left columns-1">
-                        <!-- <i class="fa-solid fa-wallet text-gray-500 text-4xl"></i> -->
-                        <i class="fa-solid fa-share-nodes text-gray-500 text-4xl"></i>
-                        <p class="text-gray-500 leading-tight font-medium text-m text-base">No of Referral</p>
+                    <img class="w-10" src="../assets/icons/share.svg" alt="" style="filter: invert(27%) sepia(100%) saturate(3839%) hue-rotate(262deg) brightness(93%) contrast(97%);">
+                        <p class="text-purple-800 leading-tight font-medium text-m text-base">No of Referral</p>
                     </div>
                     <div class="columns-1 right flex flex-row justify-end">
-                        <!-- <i class="fa-solid fa-indian-rupee-sign text-gray-500 text-4xl"></i> -->
+                        <!-- <i class="fa-solid fa-indian-rupee-sign text-purple-800 text-4xl"></i> -->
                         
-                        <p class="text-3xl mb-4 ml-1 text-gray-500"><?php echo $no_of_refer; ?></p>
+                        <p class="text-3xl mb-4 ml-1 text-purple-800"><?php echo $no_of_refer; ?></p>
                     </div>
                 </div>
             </div>
 
             <div class="columns-1 w-[100%] mt-5">
-                <div class="grid grid-cols-2 gap-1 block p-6 rounded-lg shadow-lg bg-white max-w-sm py-10">
+                <div class="grid grid-cols-2 gap-1 block p-6 rounded-xl shadow-lg bg-purple-100 max-w-sm py-10">
                     <div class="left columns-1">
-                        <i class="fas fa-university text-gray-500 text-4xl"></i>
-                        <p class="text-gray-500 leading-tight font-medium text-m text-base">Today's ROI </p>
+                        <img class="w-10" src="../assets/icons/bank.svg" alt="" style="filter: invert(27%) sepia(100%) saturate(3839%) hue-rotate(262deg) brightness(93%) contrast(97%);">
+                        <p class="text-purple-800 leading-tight font-medium text-m text-base">Today's ROI </p>
                     </div>
                     <div class="columns-1 right flex flex-row justify-end">
-                        <i class="fa-solid fa-indian-rupee-sign text-gray-500 text-4xl"></i>
-                        <p class="text-gray-500 text-3xl mb-4 ml-1"><?php echo $todays_roi; ?></p>
+                        <svg fill="#A855F7  " class="w-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                            <path d="M0 64C0 46.3 14.3 32 32 32H96h16H288c17.7 0 32 14.3 32 32s-14.3 32-32 32H231.8c9.6 14.4 16.7 30.6 20.7 48H288c17.7 0 
+                            32 14.3 32 32s-14.3 32-32 32H252.4c-13.2 58.3-61.9 103.2-122.2 110.9L274.6 422c14.4 10.3 17.7 30.3 7.4 44.6s-30.3 17.7-44.6 7.4L13.4 
+                            314C2.1 306-2.7 291.5 1.5 278.2S18.1 256 32 256h80c32.8 0 61-19.7 73.3-48H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H185.3C173 115.7 144.8 
+                            96 112 96H96 32C14.3 96 0 81.7 0 64z"/>
+                        </svg>
+                        <p class="text-purple-800 text-3xl mb-4 ml-1 mt-2"><?php echo $todays_roi; ?></p>
                     </div>
                 </div>
             </div>
 
             <div class="columns-1 w-[100%] mt-5">
-                <div class="grid grid-cols-2 gap-1 block p-6 rounded-lg shadow-lg bg-white max-w-sm py-10">
+                <div class="grid grid-cols-2 gap-1 block p-6 rounded-xl shadow-lg bg-purple-100 max-w-sm py-10">
                     <div class="left columns-1">
-                        <i class="fas fa-piggy-bank text-gray-500 text-4xl"></i>
-                        <p class="text-gray-500 leading-tight font-medium text-m text-base">Total ROI</p>
+                    <img class="w-10" src="../assets/icons/piggy-bank.svg" alt="" style="filter: invert(27%) sepia(100%) saturate(3839%) hue-rotate(262deg) brightness(93%) contrast(97%);">
+                        <p class="text-purple-800 leading-tight font-medium text-m text-base">Total ROI</p>
                     </div>
                     <div class="columns-1 right flex flex-row justify-end">
-                        <i class="fa-solid fa-indian-rupee-sign text-gray-500 text-4xl"></i>
-                        <p class="text-gray-500 text-3xl mb-4 ml-1"><?php echo $total_roi; ?></p>
+                        <svg fill="#A855F7  " class="w-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                            <path d="M0 64C0 46.3 14.3 32 32 32H96h16H288c17.7 0 32 14.3 32 32s-14.3 32-32 32H231.8c9.6 14.4 16.7 30.6 20.7 48H288c17.7 0 
+                            32 14.3 32 32s-14.3 32-32 32H252.4c-13.2 58.3-61.9 103.2-122.2 110.9L274.6 422c14.4 10.3 17.7 30.3 7.4 44.6s-30.3 17.7-44.6 7.4L13.4 
+                            314C2.1 306-2.7 291.5 1.5 278.2S18.1 256 32 256h80c32.8 0 61-19.7 73.3-48H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H185.3C173 115.7 144.8 
+                            96 112 96H96 32C14.3 96 0 81.7 0 64z"/>
+                        </svg>
+                        <p class="text-purple-800 text-3xl mb-4 ml-1 mt-2"><?php echo $total_roi; ?></p>
                     </div>
                 </div>
             </div>
 
             <div class="columns-1 w-[100%] mt-5">
-                <div class="grid grid-cols-2 gap-1 block p-6 rounded-lg shadow-lg bg-white max-w-sm py-10">
+                <div class="grid grid-cols-2 gap-1 block p-6 rounded-xl shadow-lg bg-purple-100 max-w-sm py-10">
                     <div class="left columns-1">
-                        <i class="far fa-clock text-gray-500 text-4xl"></i>
-                        <p class="text-gray-500 leading-tight font-medium text-m text-base">Remaining Days</p>
+                    <img class="w-10" src="../assets/icons/time-past.svg" alt="" style="filter: invert(27%) sepia(100%) saturate(3839%) hue-rotate(262deg) brightness(93%) contrast(97%);">
+                        <p class="text-purple-800 leading-tight font-medium text-m text-base">Remaining Days</p>
                     </div>
                     <div class="columns-1 right flex flex-row justify-end">
-                        <p class="text-gray-500 text-3xl mb-4 ml-1"><?php echo $package_expiry; ?></p>
+                        <p class="text-purple-800 text-3xl mb-4 ml-1"><?php echo $package_expiry; ?></p>
                     </div>
                 </div>
             </div>
